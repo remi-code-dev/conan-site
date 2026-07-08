@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>劇場版コナンの世界を体験</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!--トップ画像-->
+  <header class="site-header">
+    <a href="conan.html" class="logo">名探偵コナン</a>
+    <nav class="nav-links">
+      <a href="conan.html">HOME</a>
+      <a href="movies.html">劇場版一覧</a>
+      <a href="diagnosis.html">診断</a>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>劇場版名探偵コナンの世界を体験</h1>
+      <p>
+        あなたは事件の目撃者か、
+        それとも解決者か。
+      </p>
+      <p class="sub-text">
+        映画を選び、その世界へ飛び込もう。
+      </p>
+      <a class="enter-btn" onclick="enterWorld()">
+        世界へ入る
+      </a>
+    </div>
+  </header>
+  <!--サイト説明-->
+  <section class="about">
+    <h2>このサイトについて</h2>
+    <p>
+      劇場版名探偵コナンの世界を
+      紹介・体験できるファンサイトです。
+      映画のあらすじや見どころを楽しみながら、
+      実際に事件へ参加しているような体験ができます。
+    </p>
+  </section>
+  <!--人気作品-->
+  <section class="popular">
+    <h2>FILE.01 おすすめ作品</h2>
+    <div class="movie-grid">
+      <a href="28.html">
+        <img src="images/28.jpg" alt="隻眼の残像" class="poster">
+      </a>
+      <a href="26.html">
+        <img src="images/26.jpg" alt="黒鉄の魚影" class="poster">
+      </a>
+      <a href="25.html">
+        <img src="images/25.jpg" alt="ハロウィンの花嫁" class="poster">
+      </a>
+    </div>
+  </section>
+  <!--おすすめ診断-->
+  <section class="diagnosis">
+    <h2>FILE.02 劇場版診断</h2>
+    <p class="catchcopy">
+      どの劇場版から見ればいいか迷ったら？あなたにぴったりの作品を診断します。</p>
+      <a href="diagnosis.html" class="diagnosis-btn">
+        🕵️ FILE OPEN</a>
+      </section>
+      <!--劇場版一覧-->
+      <section class="timeline">
+        <h2>FILE.03 劇場版一覧</h2>
+        <p>1997年『時計仕掛けの摩天楼』から最新作までの劇場版を収録。</p>
+        <a href="movies.html" class="movie-list-btn">
+          📁 FILE OPEN</a>
+        </section>
+        <script>
+        function enterWorld() {
+          const fade = document.getElementById("fade-screen");
+          const text = document.getElementById("fade-text");
+
+          fade.classList.add("active");
+
+          const message = "ACCESSING FILE...";
+          let index = 0;
+
+          function typeLetter() {
+            if (index < message.length) {
+              text.textContent += message[index];
+              index++;
+              setTimeout(typeLetter, 120); // ← 打つ速度（遅くしたいなら100〜150）
+            } else {
+              // 全部打ち終わったら遷移
+              setTimeout(() => {
+                window.location.href = "movies.html";
+              }, 600);
+            }
+          }
+
+          // タイピング開始
+          setTimeout(typeLetter, 500);
+        }
+        </script>
+        <div id="fade-screen">
+          <p id="fade-text"></p>
+        </div>
+      </body>
+      </html>
