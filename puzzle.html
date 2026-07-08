@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FILE X 深海施設の亡霊</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/puzzle.css">
+</head>
+<body>
+  <!-- ヘッダー（既存サイトと同じ構成） -->
+  <header class="site-header">
+    <a href="conan.html" class="logo">名探偵コナン</a>
+    <nav class="nav-links">
+      <a href="conan.html">HOME</a>
+      <a href="movies.html">劇場版一覧</a>
+      <a href="diagnosis.html">診断</a>
+    </nav>
+  </header>
+
+  <!-- ヒーロー風タイトル -->
+  <header class="hero puzzle-hero">
+    <div class="overlay">
+      <h1>FILE X 深海施設の亡霊</h1>
+      <p>あなたは、海底監視施設「オルカ・ステーション」の事件に巻き込まれた——。</p>
+      <p class="sub-text">ライフが0になる前に、真相にたどり着け。</p>
+    </div>
+  </header>
+
+  <!-- ライフ表示 -->
+  <section class="puzzle-status">
+    <div class="life-container">
+      <span class="status-label">LIFE</span>
+      <span id="life">❤️❤️❤️❤️❤️</span>
+    </div>
+    <div class="stage-container">
+      <span class="status-label">STAGE</span>
+      <span id="stage-number">1 / 5</span>
+    </div>
+  </section>
+
+  <!-- 謎解き本体 -->
+  <main class="puzzle-main">
+    <section class="puzzle-card">
+      <h2 id="stage-title">STAGE 1：監視カメラの異常</h2>
+      <p id="stage-text" class="stage-text">
+        端末には3つの監視カメラ映像が表示されている。<br>
+        A：白衣の研究員。入館時と同じ服装。<br>
+        B：作業服の技術者。入館時より「腕章が増えている」。<br>
+        C：清掃員。入館時と同じ。
+      </p>
+
+      <div id="hint" class="hint">
+        不正アクセスをした可能性が最も高いのは誰か。
+      </div>
+
+      <div id="choices" class="choices">
+        <!-- JSでボタンを生成 -->
+      </div>
+
+      <div id="message" class="message"></div>
+
+      <button id="next-btn" class="next-btn" disabled>次のステージへ</button>
+    </section>
+  </main>
+
+  <!-- クリア / ゲームオーバー表示 -->
+  <section id="result-section" class="result-section hidden">
+    <div class="result-card">
+      <h2 id="result-title">事件は解決した</h2>
+      <p id="result-text">
+        あなたは見事、侵入者の正体を暴いた。<br>
+        事件は解決し、施設は通常運転に戻る。<br>
+        ——だが、これは始まりにすぎない。
+      </p>
+      <div class="result-links">
+        <a href="movies.html" class="movie-list-btn">劇場版一覧へ</a>
+        <a href="conan.html" class="diagnosis-btn">HOMEに戻る</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/puzzle.js"></script>
+</body>
+</html>

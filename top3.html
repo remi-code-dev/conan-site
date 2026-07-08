@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>診断結果 - TOP3</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      background-color:#0A1931;
+      color:white;
+      font-family:"Yu Gothic",sans-serif;
+    }
+
+    .result-container {
+      max-width: 800px;
+      margin: 80px auto;
+      text-align: center;
+      background: rgba(0,0,0,0.45);
+      padding: 50px;
+      border-radius: 20px;
+      border: 1px solid #FFD500;
+    }
+
+    .rank-box {
+      margin-top: 50px;
+      cursor; pointer
+    }
+    /* 画像ホバー時のアニメーション（劇場版一覧と同じ雰囲気） */
+    .rank-box img {
+      transition: .3s ease;
+    }
+
+    .rank-box img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 213, 0, 0.7);
+      opacity: 0.95;
+    }
+
+    .rank1 img {
+      width: 320px;
+      border: none;
+      border-radius: 0;
+    }
+
+    .rank2 img,
+    .rank3 img {
+      width: 220px;
+      border: none;
+      border-radius: 0;
+    }
+
+    .rank-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff; /* 白文字 */
+      letter-spacing: 2px;
+      text-shadow:
+          0 0 8px rgba(255, 213, 0, 0.6),   /* 金色の光 */
+          0 0 15px rgba(0, 91, 187, 0.5);   /* 青の光 */
+      margin-bottom: 10px;
+    }
+
+    .rank-sub {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      font-weight:bold;
+    }
+
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 15px 40px;
+      background: #005BBB;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: .3s;
+    }
+    .back-btn:hover {
+      background: #FFD500;
+      color: #0A1931;
+      box-shadow: 0 0 15px rgba(255,213,0,.7);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+  <a href="conan.html" class="logo">名探偵コナン</a>
+  <nav class="nav-links">
+    <a href="conan.html">HOME</a>
+    <a href="movies.html">劇場版一覧</a>
+    <a href="diagnosis.html">診断</a>
+  </nav>
+</header>
+
+  <div class="result-container">
+    <h1>あなたにおすすめの映画 TOP3</h1>
+
+    <div id="rank1" class="rank-box rank1"></div>
+    <div class="rank-row">
+
+    <div id="rank2" class="rank-box rank2"></div>
+    <div id="rank3" class="rank-box rank3"></div>
+   </div>
+    <a href="diagnosis.html" class="back-btn">もう一度診断する</a>
+  </div>
+
+  <script src="js/top3.js"></script>
+</body>
+</html>
